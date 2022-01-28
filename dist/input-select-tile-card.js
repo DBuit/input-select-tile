@@ -2583,11 +2583,11 @@ class InputSelectTileCard extends LitElement {
         var configIcon = "icon" in this.config ? this.config.icon : '';
         var configActiveState = this.config.activeState;
         return html `
-      <span class="icon${this.hass.states[entity] == configActiveState ? ' on' : ''}">
+      <span class="icon${this.hass.states[entity].state == configActiveState ? ' on' : ''}">
         <ha-icon icon="${configIcon}" />
       </span>
-      <span class="name${this.hass.states[entity] == configActiveState ? ' on' : ''}">${configName}</span>
-      <span class="state${this.hass.states[entity] == configActiveState ? ' on' : ''}"></span>
+      <span class="name${this.hass.states[entity].state == configActiveState ? ' on' : ''}">${configName}</span>
+      <span class="state${this.hass.states[entity].state == configActiveState ? ' on' : ''}"></span>
     `;
     }
     updated() { }
